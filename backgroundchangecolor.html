@@ -1,0 +1,90 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">\
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta author="Rowel B. Dacut - BSCpE 3-3">
+    <title>Background Color Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            align-items: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        #numberInput {
+            padding: 5px;
+            font-size: 16px;
+            align-items: center;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .container {
+        margin-top: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        border: 1px solid #333;
+        background-color: beige;
+         }
+  
+
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1>Background Color Changer</h1>
+        <label for="numberInput">Enter a number (0-9):</label>
+        <input type="text" id="numberInput">
+        <button onclick="changeBackgroundColor()">Change Color</button>
+        <p id="message"></p>
+    </div>
+
+
+    <script>
+        const inputElement = document.getElementById("numberInput");
+        const buttonElement = document.getElementById("colorButton");
+        const messageElement = document.getElementById("message");
+        const colors = ["black", "blue", "green", "cyan", "red", "magenta", "gray", "brown", "white", "yellow"];
+
+        function changeBackgroundColor() {
+            const number = parseInt(inputElement.value);
+
+            if (!isNaN(number) && number >= 0 && number <= 9) {
+                document.body.style.backgroundColor = colors[number];
+                messageElement.textContent = "";
+            } else {
+                messageElement.textContent = "Invalid input. Please enter a number between 0 and 9.";
+            }
+        }
+    </script>
+</body>
+</html>

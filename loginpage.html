@@ -1,0 +1,117 @@
+<!-- This Code is a Seatwork about Log-in form Page
+BSCpE 3-3 - GROUP MEMBERS :
+Dacut, Rowel B. 
+Lamban, Anthony M.
+Liwanag, Reymil L.
+Palmes, Hezekiah Saif M. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login-in Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 30%;
+      margin: 0 auto;
+    }
+
+    form {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 95%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #e1d0d0;
+      border-radius: 3px;
+    }
+
+    input[type="submit"], input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover, input[type="button"]:hover  {
+      background-color: #6ff276;
+    }
+    
+
+    /* Customize the scrollbar */
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #6ff2aa;
+      /* Change thumb color */
+      border-radius: 5px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #f3dfda;
+      /* Change track color */
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="Login-form" onsubmit="return validateLogin()">
+      <h1>LOG-IN PAGE</h1>
+
+      <label for="user_id">User ID:</label>
+      <input type="text" id="user_id" name="user_id">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+
+      <input type="submit" value="Login">
+      <input type="button" value="Reset">
+    </form>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const userIdInput = document.getElementById("user_id");
+      const passwordInput = document.getElementById("password");
+
+      if (userIdInput.value.trim() === "" || !/^\d+$/.test(userIdInput.value)) {
+        alert("Please enter a valid User ID.");
+        return false;
+      }
+
+      if (passwordInput.value.trim() === "" || passwordInput.value.length < 4) {
+        alert("Please enter a valid password (at least 4 characters).");
+        return false;
+      }
+      
+      alert("Login Complete!");
+      return true;
+    }
+
+    function resetForm() {
+      document.getElementById("Login-form").reset();
+    }
+  </script>
+</body>
+
+</html>

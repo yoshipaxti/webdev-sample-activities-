@@ -1,0 +1,111 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">\
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta author="Rowel B. Dacut - BSCpE 3-3">
+    <title>PUP Mid-Year Bonus Calculator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: #333;
+		}
+
+		label {
+			font-size: 18px;
+			margin-right: 10px;
+			display: inline-block;
+			text-align: right;
+			width: 150px;
+		}
+
+		input[type="number"] {
+			padding: 5px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			display: inline-block;
+			width: 200px;
+			text-align: center;
+            margin-bottom: 10px;
+		}
+
+		button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			display: inline-block;
+			margin-left: 10px;
+            margin-top: 10px;
+			text-align: center;
+		}
+
+		button:hover {
+			background-color: #555;
+		}
+
+		#bonus {
+			font-size: 20px;
+			margin-top: 20px;
+			text-align: center;
+			color: red;
+		}
+
+		.container {
+			margin: 250px auto;
+			width: 50%;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			text-align: center;
+		}
+	</style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Mid-Year Bonus Calculator</h1>
+            <label for="salary">Monthly Salary:</label>
+            <input type="number" id="salary">
+            <br>
+            <label for="service">Years of Service:</label>
+            <input type="number" id="service">
+            <br>
+            <button onclick="calculateBonus()">Calculate Bonus</button>
+            <p id="bonus"></p>
+        </div>
+    
+        <script>
+            function calculateBonus() {
+                const salary = document.getElementById("salary").value;
+                const service = document.getElementById("service").value;
+                let bonusPercentage = 0;
+    
+                if (service >= 1 && service <= 5) {
+                    bonusPercentage = 0.5;
+                } else if (service >= 6 && service <= 15) {
+                    bonusPercentage = 0.75;
+                } else if (service >= 16) {
+                    bonusPercentage = 1;
+                }
+    
+                const bonusAmount = salary * bonusPercentage;
+                document.getElementById("bonus").textContent = `Mid-Year Bonus: $${bonusAmount.toFixed(2)}`;
+            }
+        </script>
+    </body>
+    </html>

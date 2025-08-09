@@ -1,0 +1,134 @@
+<!-- This code is a registration form page from BSCpE 3-3. 
+Group members:
+- Dacut, Rowel B.
+- Lamban, Anthony M.
+- Liwanag, Reymil L.
+- Palmes, Hezekiah Saif M. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    form {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 95%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #e1d0d0;
+      border-radius: 3px;
+    }
+
+    input[type="submit"], input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover, input[type="button"]:hover  {
+      background-color: #6ff276;
+    }
+    
+
+    /* Customize the scrollbar */
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #6ff2aa;
+      /* Change thumb color */
+      border-radius: 5px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #f3dfda;
+      /* Change track color */
+    }
+
+    .required:after {
+      content: "*";
+      color: red; /* Change the color as desired */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="registration-form">
+      <h1>REGISTRATION FORM</h1>
+      <p>This information is for registration only. The information is used only by us to contact you regarding our
+        services.</p>
+
+      <label class="required" for="customer_id">Customer ID:</label>
+      <input type="text" id="customer_id" name="customer_id" required>
+
+      <label class="required" for="company_name">Company Name:</label>
+      <input type="text" id="company_name" name="company_name" required>
+
+      <label class="required" for="contact_name">Contact Name:</label>
+      <input type="text" id="contact_name" name="contact_name" required>
+
+      <label class="required" for="contact_title">Contact Title:</label>
+      <input type="text" id="contact_title" name="contact_title" required>
+
+      <label class="required" for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label class="required" for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+
+      <label class="required" for="region">Region:</label>
+      <input type="text" id="region" name="region" required>
+
+      <label class="required" for="postal_code">Postal Code:</label>
+      <input type="text" id="postal_code" name="postal_code" required pattern="[0-9()-+]+">
+
+      <label class="required" for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+
+      <label class="required" for="phone_number">Phone Number:</label>
+      <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9()-+]+">
+
+      <label class="required" for="fax_number">Fax Number:</label>
+      <input type="tel" id="fax_number" name="fax_number" required pattern="[0-9()-+]+">
+
+      <input type="submit" value="Submit">
+      <input type="button" value="Clear Form" onclick="clearForm()">
+    </form>
+  </div>
+  <script>
+    function clearForm() {
+      const form = document.getElementById("registration-form");
+      form.reset();
+    }
+  </script>
+</body>
+
+</html>
